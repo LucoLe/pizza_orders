@@ -1,0 +1,41 @@
+<div>
+  <h1 class="font-bold text-4xl mb-4">Orders</h1>
+
+  <% @orders.each do |order|%>
+    <hr class="border-t-black mb-2">
+    <div class="flex space-x-4">
+      <div>
+        <p>ID: <%= order['id']%></p>
+        <p>Created: <%= format_datetime(order['createdAt']) %></p>
+        <p>Promotion Codes: <%= format_array(order['promotionCodes']) %></p>
+        <p>Discount Code: <%= format_array(order['discountCodes']) %></p>
+        <p class="mt-4">Total price: <%= format_price(CalculateOrderPrice.execute(order)) %></p>
+      </div>
+
+      <div>
+        <p>Items:</p>
+        <ul class="list-disc list-inside">
+          <% order['items'].each do |item| %>
+            <li class="list-item">
+              <%= item['name']%> (<%= item['size'] %>)
+
+              <ul class="pl-4 list-inside list-hollow">
+                <% if item['add'].present? %>
+                  <li class="">Add: <%= format_array(item['add']) %></li>
+                <% end %>
+
+                <% if item['remove'].present? %>
+                  <li>Remove: <%= format_array(item['remove']) %></li>
+                <% end %>
+              </ul>
+            </li>
+          <% end %>
+        </ul>
+      </div>
+    </div>
+
+    <%= form_with url: order_path(order['id']), method: :patch do |f| %>
+      <%= f.submit value: "Complete", class: "btn mt-8 mb-4" %>
+    <% end %>
+  <% end %>
+</div>

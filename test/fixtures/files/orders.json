@@ -1,0 +1,115 @@
+{
+  "margherita": {
+    "id": "1",
+    "state": "OPEN",
+    "createdAt": "2021-04-14T11:16:00Z",
+    "items": [
+      { "name": "Margherita", "size": "Medium", "add": [], "remove": [] }
+    ],
+    "promotionCodes": [],
+    "discountCode": null
+  },
+  "margheritaWithExtraIngredients": {
+    "id": "2",
+    "state": "OPEN",
+    "createdAt": "2021-04-14T11:16:00Z",
+    "items": [
+      {
+        "name": "Margherita",
+        "size": "Medium",
+        "add": ["Olives"],
+        "remove": []
+      }
+    ],
+    "promotionCodes": [],
+    "discountCode": null
+  },
+  "margheritaWithHoldIngredients": {
+    "id": "3",
+    "state": "OPEN",
+    "createdAt": "2021-04-14T11:16:00Z",
+    "items": [
+      {
+        "name": "Margherita",
+        "size": "Medium",
+        "add": [],
+        "remove": ["Cheese"]
+      }
+    ],
+    "promotionCodes": [],
+    "discountCode": null
+  },
+  "orderWithManyItems": {
+    "id": "4",
+    "state": "OPEN",
+    "createdAt": "2021-04-14T14:08:47Z",
+    "items": [
+      {
+        "name": "Salami",
+        "size": "Medium",
+        "add": ["Onions"],
+        "remove": ["Cheese"]
+      },
+      { "name": "Salami", "size": "Medium", "add": [], "remove": [] },
+      { "name": "Tonno", "size": "Small", "add": [], "remove": ["Cheese"] },
+      { "name": "Margherita", "size": "Small", "add": [], "remove": [] },
+      {
+        "name": "Salami",
+        "size": "Small",
+        "add": ["Olives", "Onions"],
+        "remove": []
+      }
+    ],
+    "promotionCodes": [],
+    "discountCode": null
+  },
+  "orderWithPromoCode": {
+    "id": "5",
+    "state": "OPEN",
+    "createdAt": "2021-04-14T14:08:47Z",
+    "items": [
+      {
+        "name": "Salami",
+        "size": "Medium",
+        "add": ["Onions"],
+        "remove": ["Cheese"]
+      },
+      { "name": "Salami", "size": "Small", "add": [], "remove": [] },
+      { "name": "Salami", "size": "Small", "add": [], "remove": [] },
+      { "name": "Salami", "size": "Small", "add": [], "remove": [] },
+      { "name": "Salami", "size": "Small", "add": ["Olives"], "remove": [] }
+    ],
+    "promotionCodes": ["2FOR1"],
+    "discountCode": null
+  },
+  "orderWithDiscount": {
+    "id": "6",
+    "state": "OPEN",
+    "createdAt": "2021-04-14T11:16:00Z",
+    "items": [
+      { "name": "Margherita", "size": "Medium", "add": [], "remove": [] },
+      { "name": "Salami", "size": "Medium", "add": [], "remove": [] }
+    ],
+    "promotionCodes": [],
+    "discountCode": "SAVE5"
+  },
+  "orderWithManyItemsPromoCodeAndDiscount": {
+    "id": "7",
+    "state": "OPEN",
+    "createdAt": "2021-04-14T14:08:47Z",
+    "items": [
+      {
+        "name": "Salami",
+        "size": "Medium",
+        "add": ["Onions"],
+        "remove": ["Cheese"]
+      },
+      { "name": "Salami", "size": "Small", "add": [], "remove": [] },
+      { "name": "Salami", "size": "Small", "add": [], "remove": [] },
+      { "name": "Salami", "size": "Small", "add": [], "remove": [] },
+      { "name": "Salami", "size": "Small", "add": ["Olives"], "remove": [] }
+    ],
+    "promotionCodes": ["2FOR1"],
+    "discountCode": "SAVE5"
+  }
+}
